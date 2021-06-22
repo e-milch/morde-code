@@ -1,0 +1,40 @@
+html {
+    font-family: 'Courier New', Courier, monospace;
+    color: #222;
+    background: url(bg-img.jpg) no-repeat center center fixed;
+    background-size: auto;
+}
+
+.flex {
+    display: flex;
+
+    &--columns {
+        flex-direction: column;
+    }
+
+    &--rows {
+        flex-direction: row;
+    }
+
+    &--centered {
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.input-box {
+    min-width: 300px;
+    min-height: 150px;
+    border-radius: 4px;
+    background-color: transparent;
+    border-color: #deb887;
+    margin: 20px;
+}
+
+.btn {
+    background-color: transparent;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 4px;
+    width: 100px;
+    height: 40px
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Morse Code Translator</title>
+</head>
+    <body>
+        <main class="flex flex--columns flex--centered">
+            <article>
+                <section class="flex flex--columns flex--centered">
+                    <h1>Translate & Write Morse Code</h1>
+                    <p>Use English alphabet a-z or morse code . and -</p>
+                </section>
+
+                <br>
+
+                <section>
+                    <div>
+                        <h4>English to Morse Code</h4>
+                        <p>Use spaces between words</p>
+                    </div>
+                    
+                    <form id="toMorseForm">
+                        <div class="flex flex--columns flex--centered">
+                            <label for="englishInput">Type English here: </label>
+                            <input class="input-box" type="text" id="englishInput" value=""/>
+
+                            <button class="btn">Translate</button>
+                        </div>
+                        
+                    </form>
+                    <div id="morseOutput"></div>
+
+                </section>
+
+                <br>
+
+                <section>
+                    <div>
+                        <h4>Morse Code to English</h4>
+                        <p>Use spaces between morse letters and four spaces between morse words</p>
+                    </div>
+                   
+                    <form id="toEnglishForm">
+                        <div class="flex flex--columns flex--centered">
+                            <label for="morseInput">Type Morse Code here: </label>
+                            <input class="input-box" type="text" id="morseInput" />
+    
+                            <button class="btn">Translate</button>
+                        </div>
+                        
+                    </form>
+                    <div id="englishOutput"></div>
+
+                </section>
+
+            </article>
+        </main>
+
+        <script type="module" src="/dom.js"></script>
+        <script type="module" src="/alphabets.js"></script>
+
+    </body>
+</html>

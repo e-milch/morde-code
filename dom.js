@@ -37,7 +37,7 @@ const translateEnglish = (event) => {
 
     // display translation
 
-    morseOutput.innerHTML = `Your Morse Code is: ${morseOutput.value.toString(" ")}`;
+    morseOutput.innerHTML = `Your Morse Code is: ${morseOutput.value.toString("").replace(/,/g, " ")}`;
 
 };
 

@@ -4,7 +4,7 @@ export { toMorse, toEnglish };
 const toMorse = {
     a: ".-",
     b: "-...",
-    c: "-.-",
+    c: "-.-.",
     d: "-..",
     e: ".",
     f: "..-.",

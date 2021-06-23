@@ -1,5 +1,7 @@
 import { toMorse, toEnglish, } from "./alphabets.js"
 
+console.log(toEnglish)
+
 // English to Morse Translation Function
 const translateEnglish = (event) => {
     event.preventDefault();
@@ -24,7 +26,7 @@ const translateEnglish = (event) => {
             });
         });
     }); 
-    
+    // cleaning up the output because the find apparently HAS to return a pair
     console.log(translate);
     morseOutput.value = translate.map(elementArr => {
         return elementArr.map(element => {
@@ -48,26 +50,36 @@ const translateMorse = (event) => {
     console.log(morseInput.value);
     const splitMorseToWords = morseInput.value.toLowerCase().split("    ");
     console.log(splitMorseToWords);
-    const splitAllWords = splitMorseToWords.map((word) => word.split(" "));
-    console.log(splitAllWords);
+    const arrayOfWords = splitMorseToWords.map((word) => word.split(" "));
+    console.log(arrayOfWords);
 
     
     const englishOutput = document.getElementById("englishOutput");
-    const translate = splitAllWords.map((letter) => {
-        if (toEnglish.hasOwnProperty(letter));
-        return toEnglish.letter;
-    //    return alphabet.find(english => english.letter === letter);
-       
-    });
+    const translate = arrayOfWords.map((arrayOfLetters) => {
+        return arrayOfLetters.map(letter => {
+            return Object.entries(toEnglish).find(element => {
+               if (element[0] === letter) {
+                   console.log(element[1])
+                return element[1];
+                };
+                   
+            });
+        });
+    }); 
     
-    console.log(englishOutput.value);
+    console.log(translate);
 
-    // display translation -.-- .- -.-- 
+    // cleaning up the output because the find apparently HAS to return a pair
+    englishOutput.value = translate.map(elementArr => {
+        return elementArr.map(element => {
+            return element[1];
+        });
+    });
 
-    englishOutput.innerHTML = `Your English is: ${englishOutput.value}`;
+    englishOutput.innerHTML = `Your English is: ${englishOutput.value.toString("").replace(/,/g, " ")}`;
 };
 
-    // still need to create new element or populate inner html of a result display box
+    
 
     // grab Eng to Morse form and add event listener
 const toMorseForm = document.getElementById("toMorseForm");

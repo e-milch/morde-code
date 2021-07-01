@@ -60,7 +60,8 @@ const translateMorse = (event) => {
             return Object.entries(toEnglish).find(element => {
                if (element[0] === letter) {
                    console.log(element[1])
-                return element[1];
+                return element;
+                // could try returning a map as below
                 };
                    
             });
